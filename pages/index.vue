@@ -48,8 +48,9 @@ export default {
     }
   },
 
-  mounted() {
-    this.update()
+  async fetch() {
+    const response = await this.$axios.$get('/projects-manage/index')
+    this.projects = response.projects
   },
 
   methods: {
